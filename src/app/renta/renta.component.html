@@ -1,1 +1,33 @@
-<p>renta works!</p>
+<section>
+	<form>
+		<mat-form-field appearance="fill">
+			<mat-label>Primer Apellido</mat-label>
+			<input matInput [(ngModel)]="primerApellido">
+		</mat-form-field>
+		<mat-form-field appearance="fill">
+			<mat-label>Segundo Apellido</mat-label>
+			<input matInput [(ngModel)]="segundoApellido">
+		</mat-form-field>
+		<mat-form-field appearance="fill">
+			<mat-label>Nombre</mat-label>
+			<input matInput [(ngModel)]="nombre">
+		</mat-form-field>
+		<mat-form-field appearance="fill">
+			<mat-label>Select</mat-label>
+			<mat-select [(ngModel)]="departamento">
+				<mat-option value="Ventas">Ventas</mat-option>
+				<mat-option value="Contabilidad">Contabilidad</mat-option>
+				<mat-option value="Administración">Administración</mat-option>
+				<mat-option value="IT">IT</mat-option>
+			</mat-select>
+		</mat-form-field>
+		<mat-form-field appearance="fill">
+			<mat-label>Salario</mat-label>
+			<input matInput [(ngModel)]="salario">
+		</mat-form-field>
+		<button mat-raised-button color="primary">Primary</button>
+	</form>
+	<aside>
+		<img src="../../assets/img/undraw_hello_re_3evm.svg" alt="imagen alusiva">
+	</aside>
+</section>

@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./renta.component.scss']
 })
 export class RentaComponent implements OnInit {
+  
+  
+  //Variables
+  primerApellido : string = '';
+  segundoApellido : string = '';
+  nombre : string = '';
+  departamento : string = '';
+  salario:number = 0;
+
 
   constructor() { }
 
