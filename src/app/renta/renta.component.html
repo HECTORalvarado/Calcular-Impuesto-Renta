@@ -1,12 +1,10 @@
-<header class="docs-primary-header">
-	<h1>Calculadora de renta</h1>
-</header>
 
 <section>
 	<aside>
 		<img src="../../assets/img/undraw_hello_re_3evm.svg" alt="imagen alusiva">
 	</aside>
-	<form>
+	<form [ngClass]="mostrarResult == false? 'Visible' : 'noVisible'">
+		<h2>Calculadora de renta</h2>
 		<mat-form-field appearance="fill">
 			<mat-label for="apellido1">Primer Apellido</mat-label>
 			<input matInput [(ngModel)]="primerApellido" name="apellido1">
@@ -20,7 +18,7 @@
 			<input matInput [(ngModel)]="nombre" name="nombre">
 		</mat-form-field>
 		<mat-form-field appearance="fill">
-			<mat-label>Select</mat-label>
+			<mat-label>Departamento</mat-label>
 			<mat-select name="departamentos" [(ngModel)]="departamentoSeleccionado">
 				<mat-option name="departamentos-opt" *ngFor="let n of departamento" [value]="n">{{n}}</mat-option>
 			</mat-select>
@@ -29,6 +27,37 @@
 			<mat-label>Salario</mat-label>
 			<input matInput [(ngModel)]="salario" name="salario">
 		</mat-form-field>
-		<button mat-raised-button color="primary" (click)="calcularRenta">Primary</button>
+		<button mat-raised-button color="primary" (click)="calcularRenta()">Calcular Renta</button>
 	</form>
+	<div class="noVisible resultados" [ngClass]="mostrarResult == true? 'Visible' : 'noVisible'">
+		<h2>Renta a pagar $</h2>
+		<p>
+			<span>Nombre: </span>{{nombre}}
+		</p>
+		<p>
+			<span>Primer Apellido: </span>{{primerApellido}}
+		</p>
+		<p>
+			<span>Segundo Apellido: </span>{{segundoApellido}}
+		</p>
+		<p>
+			<span>Departamento: </span>{{departamentoSeleccionado}}
+		</p>
+		<p>
+			<span>Salario: </span>{{salario}}
+		</p>
+		<p>
+			<span>AFP: </span>{{AFP}}
+		</p>
+		<p>
+			<span>ISSS: </span>{{ISSS}}
+		</p>
+		<p [ngClass]="renta != 0 ? 'Visible': 'noVisible'">
+			<span>Renta: </span>{{renta}}
+		</p>
+		<p [ngClass]="renta == 0 ? 'Visible': 'noVisible'">
+			<span>No se descontará renta</span>
+		</p>
+		<button mat-raised-button color="primary" (click)="Regresar()">Calcular otro salario</button>
+	</div>
 </section>
