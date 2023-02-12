@@ -1,5 +1,9 @@
 # Lab
 
+## Descripción
+
+Este proyecto permite calcular el impuesto sobre la renta en el salvador
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
 ## Development server
