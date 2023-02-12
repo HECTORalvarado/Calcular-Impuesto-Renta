@@ -2,6 +2,10 @@ $mainColor: #9c27b0;
 $bgColor: #111323;
 $mainDarker: #490f54;
 
+* {
+	box-sizing: border-box;
+}
+
 h2{
 	font-size: 2.2rem;
 	font-family: 'League Spartan', sans-serif;
@@ -13,11 +17,12 @@ section {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 10px;
+	height: 100vh;
 	aside{
 		background: #7b1fa2;
 		border-radius: 0% 0% 138% 0% / 0% 20% 133% 133%;
 		width: 100%;
-		height: 100vh;
+		height: 100%;
 		padding-top: 20%;
 		img {
 			width: 100%;
@@ -66,7 +71,27 @@ button:hover {
 	display: none;
 }
 
-
 .Visible {
 	display: block;
+}
+
+// Responsive
+
+@media(max-width:800px){
+	section {
+		grid-template-columns: 1fr;
+		aside {
+			height: 150px;
+			width: 100%;
+			padding: 10px;
+			text-align: center;
+			img {
+				height: 90%;
+				width: auto;
+			}
+		}
+		form {
+			padding-top: 0;
+		}
+	}
 }

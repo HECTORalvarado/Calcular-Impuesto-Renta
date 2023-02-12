@@ -37,7 +37,7 @@ export class RentaComponent implements OnInit {
     return Number((sal * 0.0725).toFixed(2));
   }
   calcularISSS(sal: number): number {
-    let isss: number = sal <= 1000 ? Number((sal * 0.03).toFixed(2)) : Number((1000 * 0.03).toFixed(2));
+    let isss: number = sal < 1000 ? Number((sal * 0.03).toFixed(2)) : Number((1000 * 0.03).toFixed(2));
     return isss;
   }
 
